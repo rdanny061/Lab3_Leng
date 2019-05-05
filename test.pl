@@ -28,7 +28,6 @@ addConexion(panama,nicaragua,2).
 addConexion(costa_rica,panama,1).
 addConexion(panama,costa_rica,1).
 
-
 ruta(X,X,[X],_).
 ruta(Inicio,Final,[Inicio|Respuesta],ListaTemp):- addConexion(Inicio,X,_),
         not(member(X,ListaTemp)),
@@ -60,5 +59,5 @@ mejorRuta([Head|Tail],MejorPeso,MejorRuta,Ruta):-
 
 
 
-mainMethod(Inicio,Final,ListaEscalas,ListaTotales,MejorRuta):-
+mainMethod(Inicio,Final,ListaEscalas,MejorRuta):-
         findall(Ruta,rutaValidated(Inicio,Final,ListaEscalas,Ruta),ListaTotales),mejorPeso(ListaTotales,[],MejorPeso),mejorRuta(ListaTotales,MejorPeso,[],MejorRuta).
