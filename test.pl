@@ -1,3 +1,8 @@
+%Autor: Danny Rojas Arguedas
+%2017043300
+%Lenguajes de Programacion
+%Laboratorio 3
+
 addConexion(belice,guatemala,1).
 addConexion(guatemala,belice,1).
 addConexion(belice,honduras,2).
@@ -56,7 +61,6 @@ mejorRuta([Head|Tail],MejorPeso,MejorRuta,Ruta):-
         (member(MejorPeso,Head)
         ->mejorRuta([],_,Head,Ruta)
         ;mejorRuta(Tail,MejorPeso,MejorRuta,Ruta)).
-
 
 
 mainMethod(Inicio,Final,ListaEscalas,MejorRuta):-
